@@ -163,9 +163,14 @@ Find the coordinate matrix of the vector \myvec{1&0&1} in the basis of $C^{3}$ c
 \section{Solution}
 consider
 \begin{align}
-   P=\myvec{2i&2&0\\1&-1&1+i\\0&1&1-i}
+  \vec{P}=\myvec{2i&2&0\\1&-1&1+i\\0&1&1-i}
 \end{align}
- Now we find $P^{-1}$ by Gauss Jordan row reduction.
+Let $\beta$ and $\beta^{'}$ be two ordered bases of C and $\alpha$ be  a vector in $C^{3}$. 
+\begin{align}
+    [\alpha]{_\beta}=\vec{P} [\alpha]{_{\beta^{'}}}\\
+     [\alpha]{_{\beta^{'}}}=\vec{P^{-1}}[\alpha]{_\beta}
+\end{align}
+ Now we find $\vec{P^{-1}}$ by Gauss Jordan row reduction.
 \begin{align}
     \myvec{2i&2&0&1&0&0\\1&-1&1+i&0&1&0\\0&1&1-i&0&0&1}
 \end{align}
@@ -192,7 +197,7 @@ consider
 \end{align}
 Therefore the coordinate matrix of the vector is 
 \begin{align}
-    P^{-1}\myvec{1\\0\\1}=
+    [\alpha]{_{\beta^{'}}}=\vec{P^{-1}}\myvec{1\\0\\1}=
     \myvec{\frac{1}{3+i}&\frac{1+i}{3+i}&\frac{1-i}{3+i}\\\frac{1-i}{3+i}&\frac{-1+i}{3+i}&\frac{1+i}{3+i}\\\frac{-1}{6+2i}&\frac{1}{3+i}&\frac{1+i}{3+i}}\myvec{1\\0\\1}
     = \myvec{\frac{1-i}{2}\\\frac{3+i}{5}\\\frac{2+i}{5}}
 \end{align}
