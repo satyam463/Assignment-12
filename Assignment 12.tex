@@ -170,43 +170,18 @@ Find the coordinate matrix of the vector \myvec{1&0&1} in the basis of $C^{3}$ c
 \begin{align}
   \myvec{1\\0\\1}=\myvec{2i&2&0\\1&-1&1+i\\0&1&1-i}\myvec{\alpha{_1}\\\alpha{_2}\\\alpha{_3}}
 \end{align}
-consider
+ Now we find $\alpha{_i}$ by row reducing augmented matrix.
 \begin{align}
-  \vec{P}=\myvec{2i&2&0\\1&-1&1+i\\0&1&1-i}
+    \myvec{2i&2&0&1\\1&-1&1+i&0\\0&1&1-i&1}
+    \xleftrightarrow[R_2\rightarrow R_2-2iR_3]{R_1\rightarrow R_2}\myvec{1&-1&1+i&0\\0&2+2i&2-2i&1\\0&1&1-i&1}
 \end{align}
 \begin{align}
- \vec{P^{-1}}\myvec{1\\0\\1}=\myvec{\alpha{_1}\\\alpha{_2}\\\alpha{_3}}
- \end{align}
- Now we find $\vec{P^{-1}}$ by Gauss Jordan row reduction.
-\begin{align}
-    \myvec{2i&2&0&1&0&0\\1&-1&1+i&0&1&0\\0&1&1-i&0&0&1}
-\end{align}
-\begin{align}
-    \xleftrightarrow[R_2\leftarrow R_2-2iR_3]{R_1\leftarrow R_2}\myvec{1&-1&1+i&0&1&0\\0&2+2i&-2-2i&1&-2&0\\0&1&1-i&0&0&1}
-\end{align}
-\begin{align}
-    \xleftrightarrow[R_2\leftarrow R_2-iR_3]{R_2\leftarrow R_2/2}\myvec{1&-1&1+i&0&1&0\\0&1+i&-1-i&\frac{1}{2}&-1&0\\0&1&1-i&0&0&1}
-\end{align}
-\begin{align}
-\xleftrightarrow[R_3\leftarrow R_3-R_2]{R_1\leftarrow R_1+R_3}\myvec{1&0&2&0&1&1\\0&1&-2-2i&\frac{1}{2}&-1&-i\\0&0&3+i&\frac{-1}{2}&1&1+i}
-\end{align}
-\begin{align}
-\xleftrightarrow[R_2\leftarrow R_2+R_3]{R_1\leftarrow R_1-R_3}\myvec{1&0&-1-i&\frac{1}{2}&0&-i\\0&1&1-i&0&0&1\\0&0&3+i&\frac{-1}{2}&1&1+i}
-\end{align}
-\begin{align}
-\xleftrightarrow[R_2\leftarrow R_2+R_3]{R_1\leftarrow R_1+R_3}\myvec{1&0&2&0&1&1\\0&1&4&\frac{-1}{2}&1&2+i\\0&0&3+i&\frac{-1}{2}&1&1+i}
-\end{align}
-\begin{align}
-\xleftrightarrow[R_1\leftarrow R_1-2R_3]{R_3\leftarrow R_3/3+i}\myvec{1&0&0&\frac{1}{3+i}&\frac{1+i}{3+i}&\frac{1-i}{3+i}\\0&1&4&\frac{-1}{2}&1&2+i\\0&0&1&\frac{-1}{6+2i}&\frac{1}{3+i}&\frac{1+i}{3+i}}
-\end{align}
-\begin{align}
-\xleftrightarrow{R_2\leftarrow R_2-4R_3}\myvec{1&0&0&\frac{1}{3+i}&\frac{1+i}{3+i}&\frac{1-i}{3+i}\\0&1&0&\frac{1-i}{3+i}&\frac{-1+i}{3+i}&\frac{1+i}{3+i}\\0&0&1&\frac{-1}{6+2i}&\frac{1}{3+i}&\frac{1+i}{3+i}}
+    \xleftrightarrow[R_3\leftarrow R_3-R_2]{R_2\leftarrow R_2/2}\myvec{1&-1&1+i&0\\0&1+i&1-i&\frac{1}{2}\\0&-i&0&\frac{1}{2}}
 \end{align}
 Therefore the coordinate matrix of the vector is 
 \begin{align}
-    \myvec{\alpha{_1}\\\alpha{_2}\\\alpha{_3}}=\vec{P^{-1}}\myvec{1\\0\\1}=
-    \myvec{\frac{1}{3+i}&\frac{1+i}{3+i}&\frac{1-i}{3+i}\\\frac{1-i}{3+i}&\frac{-1+i}{3+i}&\frac{1+i}{3+i}\\\frac{-1}{6+2i}&\frac{1}{3+i}&\frac{1+i}{3+i}}\myvec{1\\0\\1}
-    = \myvec{\frac{1-i}{2}\\\frac{3+i}{5}\\\frac{2+i}{5}}
+    \myvec{\alpha{_1}\\\alpha{_2}\\\alpha{_3}}=
+     \myvec{\frac{-1-i}{2}\\\frac{i}{2}\\\frac{3+i}{4}}
 \end{align}
 \end{document}
 
